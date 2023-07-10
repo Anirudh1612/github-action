@@ -1,0 +1,20 @@
+inputs:
+  version:
+    description: "A version to install ecspresso"
+    default: latest
+    required: false
+  version-file:
+    description: "File containing the ecspresso version. Example: .ecspresso-version"
+    required: false
+  github-token:
+    description: "The token used when calling GitHub API"
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      env:
+        github_token: ${{ inputs.github-token }}
+      run: |
+        set -e
