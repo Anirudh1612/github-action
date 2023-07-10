@@ -18,3 +18,4 @@ runs:
         github_token: ${{ inputs.github-token }}
       run: |
         set -e
+        echo "Hello World"
